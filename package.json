@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:registerUser": "npx cypress run --spec cypress/e2e/1-getting-started/tests/registerTest.cy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Anchana20/Cypress-E2E/issues"
   },
-  "homepage": "https://github.com/Anchana20/Cypress-E2E#readme"
+  "homepage": "https://github.com/Anchana20/Cypress-E2E#readme",
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
 }
