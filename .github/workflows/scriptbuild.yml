@@ -1,5 +1,5 @@
 name: Sanity test build
-on: push
+on: workflow_dispatch
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04

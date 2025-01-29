@@ -1,0 +1,25 @@
+name: Docker test build
+on: push
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and run Cypress tests
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: dockerfile
+          push: false
+
+      - name: Save Cypress videos and screenshots
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-results
+          path: cypress/reports  # Adjust path if necessary
